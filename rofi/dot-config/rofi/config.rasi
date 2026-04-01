@@ -1,0 +1,26 @@
+configuration {
+    
+    modes: "combi,window,drun,ssh,calc";
+    font: "JetBrainsMono Nerd Font 14";
+
+	fixed-num-lines: true;
+    scroll-method: 0; /* 0: Per page, 1: continuous */
+    hover-select: true;
+    matching: "fuzzy";
+
+    terminal: "kitty";
+
+    drun-show-actions: true;
+    run-command: "uwsm-app -- {cmd}";
+    show-icons: true;
+    display-drun: "  ";
+    drun-display-format: "{name}";
+	/*drun-display-format: "{name} [<span weight='light' size='small'><i>({generic})</i></span>]";*/
+
+    display-window: " ";
+    window-format: "{t:50}   <span weight='light' size='small'>{c}</span>";
+    
+    display-ssh: " ";
+}
+
+@theme "catppuccin-mocha.rasi"

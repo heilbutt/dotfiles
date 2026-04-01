@@ -1,0 +1,246 @@
+/*
+Catppuccin Mocha theme for rofi launcher
+Based on: https://github.com/catppuccin/rofi
+*/
+
+* {
+    /* solid Mocha theme colors */
+    rosewater: rgb(245, 224, 220);
+    flamingo: rgb(242, 205, 205);
+    pink: rgb(245, 194, 231);
+    mauve: rgb(203, 166, 247);
+    red: rgb(243, 140, 169);
+    maroon: rgb(235, 160, 172);
+    peach: rgb(250, 179, 135);
+    yellow: rgb(249, 226, 175);
+    green: rgb(166, 227, 161);
+    teal: rgb(148, 226, 213);
+    sky: rgb(137, 220, 235);
+    sapphire: rgb(116, 199, 236);
+    blue: rgb(137, 180, 250);
+    lavender: rgb(180, 190, 254);
+    text: rgb(205, 214, 244);
+    subtext1: rgb(186, 194, 222);
+    subtext0: rgb(166, 173, 201);
+    overlay2: rgb(148, 154, 179);
+    overlay1: rgb(128, 133, 157);
+    overlay0: rgb(108, 112, 134);
+    surface2: rgb(88, 91, 112);
+    surface1: rgb(69, 71, 90);
+    surface0: rgb(49, 50, 68);
+    base: rgb(30, 30, 46);
+    mantle: rgb(24, 24, 37);
+    crust: rgb(17, 17, 27);
+
+    /* additional colors to enable transparency */
+    base-transparent: rgba(30, 30, 46, 0.7);
+}
+
+* {
+    background:                  @base-transparent; /* default: @base; */
+    lightbg:                     @mantle;
+    foreground:                  @text;
+    lightfg:                     @text;
+    
+    separatorcolor:              @foreground;
+
+    normal-background:           transparent; /* default: @background; */
+    normal-foreground:           @foreground;
+    alternate-normal-background: transparent; /* default: @lightbg; */
+    alternate-normal-foreground: @foreground;
+    selected-normal-background:  @lightfg;
+    selected-normal-foreground:  @lightbg;
+
+    urgent-background:           transparent; /* default: @background; */
+    urgent-foreground:           @red;
+    alternate-urgent-background: transparent; /* default: @lightbg; */
+    alternate-urgent-foreground: @red;
+    selected-urgent-background:  @red;
+    selected-urgent-foreground:  @lightbg; /* default: @background; */
+
+    active-background:           transparent; /* default: @background; */
+    active-foreground:           @blue;
+    alternate-active-background: transparent; /* default: @lightbg; */
+    alternate-active-foreground: @blue;    
+    selected-active-background:  @blue;
+    selected-active-foreground:  @lightbg; /* default: @background; */
+
+    border-color:                @foreground;
+    background-color:            transparent;
+    spacing:                     2;
+}
+
+/* Main window, this is also used to define positioning */
+window {
+    location: center;
+    anchor: center;
+    width: 40%;
+    padding: 5;
+    transparency: "real";
+    background-color: @background;
+    border: 2;
+    border-radius: 12px;
+}
+
+element {
+    padding: 1px ;
+    cursor:  pointer;
+    spacing: 5px ;
+    border:  0;
+    border-radius: 8px;
+}
+
+element normal.normal {
+    background-color: @normal-background;
+    text-color:       @normal-foreground;
+}
+
+element normal.urgent {
+    background-color: @urgent-background;
+    text-color:       @urgent-foreground;
+}
+
+element normal.active {
+    background-color: @active-background;
+    text-color:       @active-foreground;
+}
+
+element selected.normal {
+    background-color: @selected-normal-background;
+    text-color:       @selected-normal-foreground;
+}
+
+element selected.urgent {
+    background-color: @selected-urgent-background;
+    text-color:       @selected-urgent-foreground;
+}
+
+element selected.active {
+    background-color: @selected-active-background;
+    text-color:       @selected-active-foreground;
+}
+
+element alternate.normal {
+    background-color: @alternate-normal-background;
+    text-color:       @alternate-normal-foreground;
+}
+
+element alternate.urgent {
+    background-color: @alternate-urgent-background;
+    text-color:       @alternate-urgent-foreground;
+}
+
+element alternate.active {
+    background-color: @alternate-active-background;
+    text-color:       @alternate-active-foreground;
+}
+
+element-text {
+    background-color: transparent;
+    cursor:           inherit;
+    highlight:        inherit;
+    text-color:       inherit;
+}
+
+element-icon {
+    background-color: transparent;
+    size:             1.0000em ;
+    cursor:           inherit;
+    text-color:       inherit;
+}
+
+mainbox {
+    padding: 0;
+    border:  0;
+}
+
+message {
+    padding:      1px ;
+    border-color: @separatorcolor;
+    border:       2px dash 0px 0px ;
+}
+
+textbox {
+    text-color: @foreground;
+}
+
+listview {
+    padding:      2px 0px 0px ;
+    scrollbar:    true;
+    border-color: @separatorcolor;
+    spacing:      2px ;
+    fixed-height: 0;
+    border:       2px dash 0px 0px ;
+}
+
+scrollbar {
+    width:        4px ;
+    padding:      0;
+    handle-width: 8px ;
+    border:       0;
+    handle-color: @normal-foreground;
+}
+
+sidebar {
+    border-color: @separatorcolor;
+    border:       2px dash 0px 0px ;
+}
+
+button {
+    cursor:     pointer;
+    spacing:    0;
+    text-color: @normal-foreground;
+}
+
+button selected {
+    background-color: @selected-normal-background;
+    text-color:       @selected-normal-foreground;
+}
+
+num-filtered-rows {
+    expand:     false;
+    text-color: Gray;
+}
+
+num-rows {
+    expand:     false;
+    text-color: Gray;
+}
+
+textbox-num-sep {
+    expand:     false;
+    str:        "/";
+    text-color: Gray;
+}
+
+inputbar {
+    padding:    1px ;
+    spacing:    0px ;
+    text-color: @normal-foreground;
+    children:   [ "prompt","textbox-prompt-colon","entry","num-filtered-rows","textbox-num-sep","num-rows","case-indicator" ];
+}
+
+case-indicator {
+    spacing:    0;
+    text-color: @normal-foreground;
+}
+
+entry {
+    text-color:        @normal-foreground;
+    cursor:            text;
+    spacing:           0;
+    placeholder-color: Gray;
+    placeholder:       "Type to filter";
+}
+
+prompt {
+    spacing:    0;
+    text-color: @normal-foreground;
+}
+
+textbox-prompt-colon {
+    margin:     0px 0.3000em 0.0000em 0.0000em ;
+    expand:     false;
+    str:        ":";
+    text-color: inherit;
+}

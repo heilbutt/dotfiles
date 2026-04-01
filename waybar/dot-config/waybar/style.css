@@ -1,0 +1,109 @@
+/* import theme colors */
+@import "catppuccin-mocha.css";
+
+/* Waybar root container*/
+#waybar {
+    /*background: transparent;*/
+	background: linear-gradient(180deg, @crust 0%, rgba(0,0,0,0.0) 100%);
+    font-family: 'JetBrainsMono Nerd Font', 'monospace';
+    font-weight: normal;
+    font-size: 11pt;
+    color: @text;
+    box-shadow: none;
+}
+
+/* Module groups */
+.modules-left,
+.modules-center,
+.modules-right {
+    margin-top: 4px;
+    margin-left: 8px;
+    margin-right: 8px;
+    margin-bottom: 4px;
+    padding: 0;
+    /* background with alpha > 0 to make hyprland blur it with layerrule ignore_alpha 0 */
+    /*background-color: alpha(@base, 0.1); */
+	background: transparent;
+    border-radius: 10px;
+    border-width: 2px;
+    /*border-style: solid;*/
+	border-style: none;
+    border-color: alpha(@surface2, 0.7);
+}
+
+/* All widgets */
+widget > * {
+    padding-top: 0px;
+    padding-bottom: 0px;
+    padding-left: 4px;
+    padding-right: 4px;
+	border-radius: 8px;
+}
+
+/* First and last module in each group */
+/*
+widget:first-child > * {
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+}
+widget:last-child > * {
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+*/
+
+/* Menus expanding from tray icons: match GTK and Qt styles */
+#tray * {
+    font-family: 'Noto Sans', 'Arial Narrow', Arial, sans-serif;
+    font-size: 10pt;
+}
+
+#custom-temperature.critical,
+#pulseaudio.muted {
+    color: @red;
+}
+
+/* Hover effect */
+widget > *:hover {
+    background-color: rgba(70, 75, 90, 0.9);
+}
+
+/* No hover for these modules */
+#tray:hover,
+#workspaces:hover {
+    background-color: unset;
+}
+
+/* Workspace indicator buttons */
+#workspaces button {
+    background: transparent;
+	color: @text;
+    padding-left: 4px;
+	padding-right: 4px;
+	padding-top: 0px;
+	padding-bottom: 0px;
+    margin: 0px;
+	border-radius: 8px;
+	border-width: 2px;
+	border-style: solid;
+	border-color: transparent;
+}
+#workspaces button:hover {
+    background-color: alpha(@lavender, 0.5);
+}
+#workspaces button.active {
+    border-color: @lavender;
+	font-weight: bold;
+}
+#workspaces button.empty {
+	color: @surface2;
+}
+/* padding correction for workspace buttons */
+#workspaces {
+	padding-left: 0px;
+}
+
+/* Window title */
+#window {
+    font-style: italic;
+}

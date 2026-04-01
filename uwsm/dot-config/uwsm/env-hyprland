@@ -1,0 +1,33 @@
+# [HP] 2026-03-22, file created by Hermann
+
+# Sets environment variables for UWSM-managed session
+# Specific options for compositor should go in ~/.config/uwsm/env-hyprland
+# See https://wiki.hypr.land/Configuring/Environment-variables/
+
+# Hyprland cursors
+# https://wiki.hypr.land/Hypr-Ecosystem/hyprcursor/
+export XCURSOR_THEME='volantes_light_cursors'
+export XCURSOR_SIZE='32'
+export HYPRCURSOR_SIZE='32'
+
+# Electron apps: bitwarden, obsidian, ...
+export ELECTRON_OZONE_PLATFORM_HINT='auto'
+
+# Chromium browsers (enable WebRTC for screen capture)
+export CHROME_FLAGS='--ozone-platform-hint=auto --enable-features=WebRTCPipeWireCapturer'
+
+# Firefox browsers
+export MOZ_ENABLE_WAYLAND='1'
+
+# GTK apps (X11 as fallback)
+export GDK_BACKEND='wayland,x11'
+
+# QT apps (X11 as fallback)
+export QT_QPA_PLATFORM='wayland;xcb'
+export QT_AUTO_SCREEN_SCALE_FACTOR='1'
+export QT_QPA_PLATFORMTHEME='qt6ct'
+
+# XDG (normally detected but does not hurt to set them)
+export XDG_CURRENT_DESKTOP='Hyprland'
+export XDG_SESSION_TYPE='wayland'
+export XDG_SESSION_DESKTOP='Hyprland'

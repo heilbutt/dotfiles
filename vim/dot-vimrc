@@ -1,0 +1,19 @@
+" tabstop width
+set tabstop=4
+set shiftwidth=4
+
+" appearance of whitespaces (toggle with :set list!)
+set listchars=eol:¬,tab:——→,trail:~,extends:>,precedes:<,space:␣
+
+" syntax highlighting
+filetype plugin on
+syntax on
+
+" relative line numbering
+set number
+set relativenumber
+
+" search
+set incsearch " incremental search while typing
+set hlsearch " highlight results
+set ignorecase
