@@ -3,11 +3,14 @@
 # [HP] configured by Hermann
 ############################
 
-# prompt
+# Prompt
 PS1='[\u@\h \W]\$ '
 
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
+
+# local scripts
+export PATH="$HOME/.local/bin:$PATH"
 
 # colors for various console commands
 alias grep='grep --color=always'
