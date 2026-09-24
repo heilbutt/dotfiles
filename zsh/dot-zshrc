@@ -1,0 +1,10 @@
+# ~/.zshrc
+# Read all .zsh files in ~/.zshrc.d which are usually placed there by GNU stow
+# notes on glob qualifier:
+# N nullglob, no error if directory is empty
+# - follows symlinks
+# . match only regular files
+for f in "$HOME"/.zshrc.d/*.zsh(N-.); do
+  source "$f"
+done
+unset f
