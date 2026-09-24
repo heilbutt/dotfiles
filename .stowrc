@@ -1,2 +1,4 @@
 --target=$HOME
 --dotfiles
+--no-folding
+--ignore=\.DS_Store
