@@ -1,3 +1,4 @@
+--verbose
 --target=$HOME
 --dotfiles
 --no-folding
